@@ -18,6 +18,7 @@ router.route('/create-student').post((req, res, next) => {
 router.route('/').get((req, res) => {
   studentSchema.find((error, data) => {
     if (error) {
+      // eslint-disable-next-line no-undef
       return next(error)
     } else {
       res.json(data)
@@ -28,6 +29,7 @@ router.route('/').get((req, res) => {
 router.route('/edit-student/:id').get((req, res) => {
   studentSchema.findById(req.params.id, (error, data) => {
     if (error) {
+      // eslint-disable-next-line no-undef
       return next(error)
     } else {
       res.json(data)
