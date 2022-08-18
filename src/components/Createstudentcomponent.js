@@ -3,7 +3,10 @@ import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 export default class CreateStudent extends Component {
+
   constructor(props) {
+
+    
     super(props)
     // Setting up functions
     this.onChangeStudentName = this.onChangeStudentName.bind(this);
@@ -17,15 +20,22 @@ export default class CreateStudent extends Component {
       rollno: ''
     }
   }
+
+
+
   onChangeStudentName(e) {
     this.setState({ name: e.target.value })
   }
+
+
   onChangeStudentEmail(e) {
     this.setState({ email: e.target.value })
   }
+
   onChangeStudentRollno(e) {
     this.setState({ rollno: e.target.value })
   }
+
   onSubmit(e) {
     e.preventDefault()
     const studentObject = {
@@ -37,6 +47,7 @@ export default class CreateStudent extends Component {
       .then(res => console.log(res.data));
     this.setState({ name: '', email: '', rollno: '' })
   }
+
   render() {
     return (<div className="form-wrapper">
       <Form onSubmit={this.onSubmit}>

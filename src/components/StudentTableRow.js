@@ -7,6 +7,8 @@ export default class StudentTableRow extends Component {
         super(props);
         this.deleteStudent = this.deleteStudent.bind(this);
     }
+
+    
     deleteStudent() {
         axios.delete('http://localhost:4000/students/delete-student/' + this.props.obj._id)
             .then((res) => {
@@ -15,6 +17,8 @@ export default class StudentTableRow extends Component {
                 console.log(error)
             })
     }
+
+
     render() {
         return (
             <tr>

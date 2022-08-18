@@ -10,6 +10,8 @@ export default class StudentList extends Component {
       students: []
     };
   }
+
+
   componentDidMount() {
     axios.get('http://localhost:4000/students/')
       .then(res => {
@@ -21,11 +23,16 @@ export default class StudentList extends Component {
         console.log(error);
       })
   }
+
+  
+
+
   DataTable() {
     return this.state.students.map((res, i) => {
       return <StudentTableRow obj={res} key={i} />;
     });
   }
+
 
   render() {
     return (<div className="table-wrapper">
